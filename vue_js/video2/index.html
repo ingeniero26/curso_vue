@@ -12,7 +12,7 @@
   <body>
     <div id="app" class="container">
         <div v-if="!formSubmitted">
-            <form v-on:submit="submitForm">
+            <form @submit.prevent="submitForm">
                 <h4>Registrate con nosotros</h4>
                 <div class="form-gruop">
                     <label for="first_name">Nombre</label>
@@ -20,16 +20,49 @@
                 </div>
 
                 <div class="form-gruop">
-                    <label for="first_name">Apellidos</label>
+                    <label for="last_name">Apellidos</label>
                     <input  v-model="last_name" type="text" id="last_name" class="form-control">
                 </div>
-                <button class="submit" class="btn btn-primary"  disabled>Continuar</button>
+                <div class="form-gruop">
+                    <label for="last_name2">Apellidos 2</label>
+                    <input  v-model="last_name2" type="text" id="last_name2" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary"  :disabled="!isFormValid()">Continuar</button><br>
             </form>
         </div>
+        <div v-else>
+            <h3>Bienvenido, {{ first_name }} {{ last_name }} {{ last_name2 }}</h3>
+        </div>
+        <footer>
+            <p>@copy: 2022 JKSYSTEMAS</p>
+        </footer>
     </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+   <script>
+    var app = new Vue ({
+        el:"#app",
+        data:{
+            first_name:'',
+            last_name:'',
+            last_name2:'',
+            formSubmitted : false
+        },
+        // valida si los datos no estan vacios
+        methods: {
+            isFormValid: function () {
+                return this.first_name != "" && this.last_name != "" && this.last_name2 != ""
+            },
+            submitForm:function () {
+                if(!this.isFormValid()) return; 
+
+                this.formSubmitted = true;
+            }
+        },
+
+    });
+   </script>
       
  
   </body>
