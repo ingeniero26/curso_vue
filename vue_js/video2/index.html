@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div id="app" class="container">
+        <div v-if="!formSubmitted">
+            <form v-on:submit="submitForm">
+                <h4>Registrate con nosotros</h4>
+                <div class="form-gruop">
+                    <label for="first_name">Nombre</label>
+                    <input  v-model="first_name" type="text" id="first_name" class="form-control">
+                </div>
+
+                <div class="form-gruop">
+                    <label for="first_name">Apellidos</label>
+                    <input  v-model="last_name" type="text" id="last_name" class="form-control">
+                </div>
+                <button class="submit" class="btn btn-primary"  disabled>Continuar</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+      
+ 
+  </body>
+</html>

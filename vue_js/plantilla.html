@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Curso VJ</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+   
+  </head>
+  <body >
+    <div id="app">
+        <h1 id="title">Bienvenido, {{name}}</h1>
+         <input type="text"  v-model="name" class="form-control">
+         <hr>
+         <pre>
+              {{$data | json}}
+         </pre>
+       
+    </div>
+
+   
+
+ 
+   
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <script type="text/javascript">
+      new Vue({
+              el: "#app",
+              data: {
+                  name:"Jerson"
+              }
+        });
+       </script>
+      
+</body>
+</html>
