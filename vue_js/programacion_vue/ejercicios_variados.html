@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Programacion</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container" id="app">
+        <div class="row">
+            <h1 class="jumbotron text-center">Agregando Productos</h1>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>
+                            Nombre
+                        </td>
+                        <td>
+                            Cantidad
+                        </td>
+                        <td>
+                            Precio
+                        </td>
+                    </tr>
+                   
+                    <tr v-for="item in items">
+                        <td>{{item}}</td>
+                    </tr>
+                     
+                </tbody>
+                <tfoot>
+                    
+                   
+                    <tr> 
+                       
+                        <td>
+                            <input v-model="newItem" type="text" class="form-control">
+                        </td>
+                        <td>
+                            <input  v-model="newItem2" type="number" class="form-control">
+                        </td>
+                        <td>
+                            <input  v-model="newItem3" type="number" class="form-control">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><button @click="add" class="btn btn-primary">Agregar</button></td>
+                    </tr> 
+                    <tr>
+                        <td>Se han agregado {{items.length}} elementos</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                newItem:'',
+                newItem2:'',
+                newItem3:'',
+                items:[]
+            },
+            methods: {
+                add() {
+                    if(this.newItem.trim().length <=3) {
+                        return;
+                    }
+                    this.items.push(this.newItem);
+                    this.newItem ='';
+                    this.items.push(this.newItem2);
+                    this.newItem2 = '';
+                    this.items.push(this.newItem3);
+                    this.newItem3 = '';
+                }
+            },
+        });
+    </script>
+
+</body>
+
+</html>
