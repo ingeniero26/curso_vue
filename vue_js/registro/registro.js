@@ -7,10 +7,12 @@ var app = new Vue({
         apellidos:'',
         documento:'',
         direccion:'',
+        tipoDoc:'',
         nuevoCliente:'',
         nuevoApellidos:'',
         nuevoDoc:'',
-        nuevaDir:''
+        nuevaDir:'',
+        nuevoTipoDoc:''
         
 
     },
@@ -19,6 +21,7 @@ var app = new Vue({
             this.clientes.push({
                 nombre:this.nuevoCliente,
                  apellidos:this.nuevoApellidos,
+                 tipoDoc:this.nuevoTipoDoc,
                  documento:this.nuevoDoc,
                  direccion:this.nuevaDir,
                  estado:false
