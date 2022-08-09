@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta
+        name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+
+        <div class="container mt-5" id="app">
+            <div class="row">
+                <h1 class="text-center">Propiedades Computadas</h1>
+                <hr>
+                <button class="btn btn-primary" @click="contador++">+</button>
+                <br>
+                <button class="btn btn-danger" @click="contador--">-</button>
+                <h3>{{contador}}</h3>
+                <hr> <br>
+
+
+               
+            </div>
+            <div class="row">
+                <div class="progress">
+                    <div class="progress-bar w-75" role="progressbar"
+                     aria-valuenow="20"
+                     aria-valuemin="0" aria-valuemax="100" 
+                     :class="color"
+                     :style="{'width': contador+'%'}">{{contador}}%</div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="app_computadas.js"></script>
+
+    </body>
+</html>
